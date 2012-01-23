@@ -10,7 +10,6 @@ use Doctrine\ORM\Query\AST\Functions\FunctionNode;
  */
 class DateFormat extends FunctionNode
 {
-    // (1)
     public $date = null;
     public $format = null;
 
