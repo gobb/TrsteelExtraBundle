@@ -1,41 +1,41 @@
 {# default Sliding pagination control implementation #}
 
 {% if pageCount > 1 %}
-<div class="cmscore_pagination">
+<div class="trsteel_extra_pagination">
 {#
     {% if first is defined and current != first %}
-        <span class="cmscore_first">
+        <span class="trsteel_extra_first">
             <a href="{{ path(route, query|merge({'page': first})) }}">&lt;&lt;</a>
         </span>
     {% endif %}
 #}
 
     {% if previous is defined %}
-        <span class="cmscore_previous">
+        <span class="trsteel_extra_previous">
             <a href="{{ path(route, query|merge({'page': previous})) }}">&lt; Previous page</a>
         </span>
     {% endif %}
 
     {% for page in pagesInRange %}
         {% if page != current %}
-            <span class="cmscore_page">
+            <span class="trsteel_extra_page">
                 <a href="{{ path(route, query|merge({'page': page})) }}">{{ page }}</a>
             </span>
         {% else %}
-            <span class="cmscore_page cmscore_current">{{ page }}</span>
+            <span class="trsteel_extra_page trsteel_extra_current">{{ page }}</span>
         {% endif %}
 
     {% endfor %}
 
     {% if next is defined %}
-        <span class="cmscore_next">
+        <span class="trsteel_extra_next">
             <a href="{{ path(route, query|merge({'page': next})) }}">Next page &gt;</a>
         </span>
     {% endif %}
 
 {#
     {% if last is defined and current != last %}
-        <span class="cmscore_last">
+        <span class="trsteel_extra_last">
             <a href="{{ path(route, query|merge({'page': last})) }}">&gt;&gt;</a>
         </span>
     {% endif %}
